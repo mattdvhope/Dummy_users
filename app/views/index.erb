@@ -3,7 +3,15 @@
   <p>Returning user? Please sign in below:</p>
 
 
-  <form>
+  <form action='/auth_user' method='post'>
+    <label for="user_name">Enter User Name</label>
+    <input type="text" name="user"/><br>
+
+    <label for="password">Enter Password</label>
+    <input type="text" name="password_for_user"/><br>
+
+    <input type="submit" name="Submit Button"/><br>
+  
   </form>
   
   <p>New to dummy user? Please create an acccount:</p>
