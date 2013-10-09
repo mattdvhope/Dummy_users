@@ -1,0 +1,21 @@
+<h1>Welcome Back! <%= @returning_user.real_name %> </h1>
+
+<br>
+<table>
+  <tr>
+    <th>Real Name: </th> <td> <%= @returning_user.real_name %></td>
+  </tr>
+
+  <tr>
+  <th>User Name: </th> <td> <%= @returning_user.user_name %></td>
+  </tr>
+
+  <tr>
+  <th>Password: </th> <td> <%= @returning_user.password %> </td>
+  </tr>
+</table>
+
+<a href='/'>Return Home</a>
+<br>
+<a href='/bye'>Log Out</a>
+

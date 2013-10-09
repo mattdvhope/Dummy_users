@@ -21,20 +21,37 @@ post '/completion' do
 end
 
 get '/completion/:id' do
- @new_user = User.find(params[:id])
- erb :new_user_page
+   @new_user = User.find(params[:id])
+   erb :new_user_page
 end
 
 #-------------------
-#Logging in a Returning
+#Logging in a Returning User
 
 post '/auth_user' do
-  returning_user = User.find_by_user_name(params[:user])
 
-  if returning_user.password == params[:password_for_user]
-    returning_user = User.find(params[:user])
-    redirect to "completion/#{returning_user.id}"
+  redirect to '/' if User.find_by_user_name(params[:user]).nil?
+  
+  @returning_user = User.find_by_user_name(params[:user])
+
+  if @returning_user.password == params[:password_for_user]
+    session[:id] = @returning_user.id
+    p session
+    erb :welcome_page # to send them after they log in
   else
     redirect to '/'
   end
 end
+
+#add a logout session via <a href> on new page return home
+get '/bye' do
+  session.clear
+  p session
+  redirect to '/'
+end
+
+
+
+
+
+

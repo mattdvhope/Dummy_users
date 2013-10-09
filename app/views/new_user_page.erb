@@ -1,8 +1,17 @@
 <br>
-<%= @new_user.real_name %>
-<br>
-<%= @new_user.user_name %>
-<br>
-<%= @new_user.password %>
-<br>
+<table>
+  <tr>
+    <th>Real Name: </th> <td> <%= @new_user.real_name %></td>
+  </tr>
+
+  <tr>
+  <th>User Name: </th> <td> <%= @new_user.user_name %></td>
+  </tr>
+
+  <tr>
+  <th>Password: </th> <td> <%= @new_user.password %> </td>
+  </tr>
+</table>
+
 <a href='/'>Return Home</a>
+
